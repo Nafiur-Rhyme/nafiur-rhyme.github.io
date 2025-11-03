@@ -27,6 +27,41 @@
             margin-left: 1em;
         }
 
+        /* Project dropdown styles */
+        .project-item {
+            transition: all 0.3s ease;
+        }
+        
+        .project-header {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .project-header:hover {
+            background-color: rgba(148, 163, 184, 0.1);
+        }
+        
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+            opacity: 0;
+        }
+        
+        .project-details.expanded {
+            max-height: 1000px;
+            opacity: 1;
+            padding-top: 1rem;
+        }
+        
+        .dropdown-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown-icon.rotated {
+            transform: rotate(180deg);
+        }
+
     </style>
 </head>
 <body style="background-color: #dbeafe;" class="bg-gradient-to-br from-blue-200 via-blue-50 to-white text-gray-900 font-sans">
@@ -94,18 +129,15 @@
                     <h2 class="text-sm tracking-wider mb-4 text-center text-slate-800">ABOUT ME<hr/></h2>
                     <div class="space-y-4 text-slate-700">
                         <p class="text-justify">
-                            I'm a Software Engineer with a passion for creating efficient and user-friendly applications. 
-                            I deeply enjoy the process of breaking down complex ideas and transform them into elegant, intuitive solutions. 
-                            My journey in tech is driven by a constant curiosity to learn and adapt to emerging technologies ensuring that I deliver 
-                            reliable solutions that make a meaningful impact. 
+                            I'm a Software Engineer passionate about transforming complex ideas into elegant, user-friendly solutions. 
+                            My curiosity for emerging technologies drives me to deliver reliable, impactful applications.
                             <br/> <br/>
-                            I am experienced working full-stack with React Native, NextJS, NodeJS, and AWS services to build mobile applications and web services.
-                            I also explored Go (Fiber) and FastAPI for backend development for side projects.
-                            Further down the career, I want to emphasize more in the Backend and Data Engineering field.
+                            I specialize in full-stack development with React Native, Next.js, Node.js, and AWS services. 
+                            I've also explored Go (Fiber) and FastAPI for backend projects. 
+                            Moving forward, I'm focusing on Backend and Data Engineering.
                             <br/> <br/>
-                            Aside from coding, my hobbies include playing guitar, solving puzzles, reading, and exploring new places. 
-                            I enjoy learning new things about Science, especially Physics.
-                            I also love to travel and try out various cuisines with my wife.
+                            Beyond coding, I enjoy playing guitar, solving puzzles, listening to music, reading, and exploring new places with my wife. 
+                            I'm particularly fascinated by Physics and discovering new cuisines.
                         </p>
                         <div class="my-6 border-1 border-slate-800 p-4 rounded-lg">
                             <h2 class="text-sm tracking-wider text-slate-800 mb-2 text-center">SKILLS - AT A GLANCE</h2>
@@ -156,12 +188,24 @@
                                         <p class="text-xs font-light text-right">September 2023 - October 2025</p>
                                     </div>
                                 </div>
-                                <p class="mt-2 text-sm leading-normal text-justify text-slate-600">
-                                    Worked with cross-platform mobile development with React Native, Redux Toolkit, and Node.js. 
-                                    Utilized AWS services, Stripe integration, and Firebase Cloud Messaging for notifications. 
-                                    Redesigned UI, added features, and built admin side pages with Next.js for efficient management.
-                                </p>
-                                </u>
+                                <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                    <li class="flex items-start">
+                                        <span class="mr-2">•</span>
+                                        <span>Developed cross-platform mobile applications using React Native and Redux Toolkit</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-2">•</span>
+                                        <span>Built admin dashboard with Next.js for efficient content management</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-2">•</span>
+                                        <span>Integrated AWS services (Lambda, DynamoDB) and Stripe payment processing</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-2">•</span>
+                                        <span>Implemented Firebase Cloud Messaging for push notifications</span>
+                                    </li>
+                                </ul>
                                 <ul class="mt-2 flex flex-wrap text-sm leading-loose">
                                     <li class="mr-4 text-slate-500">React-Native</li>
                                     <li class="mr-4 text-slate-500">NextJS</li>
@@ -184,10 +228,24 @@
                                     <h5>Internship - Data Science</h5>
                                     <p class="text-xs font-light">June - August 2023</p>
                                 </div>
-                                <p class="mt-2 text-sm leading-normal text-justify text-slate-600">
-                                    Performed Data cleaning and analysis and visualization using python - pandas and seaborn.
-                                    Sales Data Analysis, Budget prediction, and Geographical data visualization, IoT data processing.
-                                </p>
+                                <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                    <li class="flex items-start">
+                                        <span class="mr-2">•</span>
+                                        <span>Performed data cleaning, analysis, and visualization using Python, Pandas, and Seaborn</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-2">•</span>
+                                        <span>Conducted sales data analysis and budget prediction modeling</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-2">•</span>
+                                        <span>Created geographical data visualizations for business insights</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-2">•</span>
+                                        <span>Processed and analyzed IoT sensor data using FastAPI</span>
+                                    </li>
+                                </ul>
                                 <ul class="mt-2 flex flex-wrap text-sm leading-loose">
                                     <li class="mr-4 text-slate-500">Python</li>
                                     <li class="mr-4 text-slate-500">SQL</li>
@@ -202,93 +260,213 @@
 
                 <section id="projects" class="mb-16 scroll-mt-24">
                     <h2 class="text-sm tracking-wider mb-8 text-center text-slate-800">PROJECTS<hr/></h2>
-                    <div class="space-y-14">
-                        <!-- Project 1 -->
-                        <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 items-center justify-center cursor-pointer">
-                            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5"></div>
-                            <div class="z-10 sm:order-2 sm:col-span-6">
-                                <h3 class="text-lg font-semibold text-slate-800">
-                                    <a href="https://github.com/Nafiur-Rhyme/EZBudget" target="_blank" class="inline-flex items-baseline font-medium leading-tight text-slate-800 hover:text-blue-800 focus-visible:text-blue-800">
-                                        EZ Budget
-                                    </a>
-                                </h3>
-                                <p class="mt-2 text-sm leading-normal text-slate-600 text-justify">
-                                    A simple app for managing personal finances, built with React Native and Expo.
-                                    Users can track their expenses, set budgets, and view spending insights.
-                                </p>
-                                <ul class="mt-2 flex flex-wrap text-sm leading-loose">
-                                    <li class="mr-4 text-slate-500">Expo</li>
-                                    <li class="mr-4 text-slate-500">SQLite</li>
-                                </ul>
+                    <div class="space-y-4">
+                        <!-- Project 1 - Wishtrovert -->
+                        <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project1')">
+                                <div class="flex items-center gap-4 flex-1">
+                                    <img src="./public/WishtrovertLogo.png" alt="Project 1" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-slate-800">Wishtrovert</h3>
+                                        <ul class="mt-1 flex flex-wrap text-sm leading-loose">
+                                            <li class="mr-4 text-slate-500">NextJS</li>
+                                            <li class="mr-4 text-slate-500">Tailwindcss</li>
+                                            <li class="mr-4 text-slate-500">Supabase</li>
+                                            <li class="mr-4 text-slate-500">OAuth</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <svg class="dropdown-icon w-6 h-6 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </div>
-                            <img src="./public/EZ.png" alt="Project 2" class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
+                            <div id="project1" class="project-details px-4 pb-4">
+                                <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
+                                    <div class="sm:col-span-8">
+                                        <a href="https://wishtrovert.com" target="_blank" class="inline-flex items-center gap-2 bg-transparent border-2 border-slate-400 text-slate-400 px-4 py-2 rounded-lg hover:bg-slate-400 hover:text-white transition font-medium text-sm mb-3">
+                                            Visit wishtrovert.com
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            </svg>
+                                        </a>
+                                        <p class="mt-2 text-sm leading-normal text-slate-600">
+                                            A wishlist platform designed to make gift-giving thoughtful and stress-free.
+                                        </p>
+                                        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Create and organize wishlists with detailed descriptions, links, and pricing</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Connect with friends and family to avoid duplicate gifts</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Track gift interest and coordinate thoughtful surprises</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Secure authentication with OAuth integration</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Project 2 -->
-                        <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 items-center justify-center cursor-pointer">
-                            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5"></div>
-                            <div class="z-10 sm:order-2 sm:col-span-6">
-                                <h3 class="text-lg font-semibold text-slate-800">
-                                    <a href="#" class="inline-flex items-baseline font-medium leading-tight text-slate-800 hover:text-blue-800 focus-visible:text-blue-800">
-                                        Policy Document - Q&A Chatbot
-                                    </a>
-                                </h3>
-                                <p class="mt-2 text-sm leading-normal text-slate-600 text-justify">
-                                    Integrated a RAG pipeline to retrieve and process PDF documents for accurate query responses. The app extracts text, chunks it, embeds it, and stores it in a vector DB.
-                                    Users ask questions in Streamlit, and LangChain + RAG retrieves relevant parts of the document and answers.
 
-                                </p>
-                                <ul class="mt-2 flex flex-wrap text-sm leading-loose">
-                                    <li class="mr-4 text-slate-500">Python</li>
-                                    <li class="mr-4 text-slate-500">Streamlit</li>
-                                    <li class="mr-4 text-slate-500">LangChain</li>
-                                    <li class="mr-4 text-slate-500">RAG</li>
-                                </ul>
+                        <!-- Project 2 - Southport Masjid -->
+                        <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project2')">
+                                <div class="flex items-center gap-4 flex-1">
+                                    <img src="./public/SouthportMasjid.png" alt="Project 2" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-slate-800">Southport Masjid</h3>
+                                        <ul class="mt-1 flex flex-wrap text-sm leading-loose">
+                                            <li class="mr-4 text-slate-500">React-Native</li>
+                                            <li class="mr-4 text-slate-500">Node.js</li>
+                                            <li class="mr-4 text-slate-500">AWS Lambda</li>
+                                            <li class="mr-4 text-slate-500">DynamoDB</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <svg class="dropdown-icon w-6 h-6 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </div>
-                            <img src="./public/pdf_logo.png" alt="Project 2" class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
+                            <div id="project2" class="project-details px-4 pb-4">
+                                <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
+                                    <div class="sm:col-span-6">
+                                        <a href="https://play.google.com/store/apps/details?id=com.idee.southportmosque&hl=en_CA" target="_blank" class="inline-flex items-center gap-2 bg-transparent border-2 border-slate-400 text-slate-400 px-4 py-2 rounded-lg hover:bg-slate-400 hover:text-white transition font-medium text-sm mb-3">
+                                            View on Play Store
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            </svg>
+                                        </a>
+                                        <p class="mt-2 text-sm leading-normal text-slate-600">
+                                            A community mobile app for the Southport Masjid congregation.
+                                        </p>
+                                        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Real-time prayer times and notifications</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Community events and announcements</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Integrated donation system with Stripe</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Serverless backend with AWS Lambda and DynamoDB</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Project 3 -->
-                        <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 items-center justify-center cursor-pointer">
-                            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5"></div>
-                            <div class="z-10 sm:order-2 sm:col-span-6">
-                                <h3 class="text-lg font-semibold text-slate-800">
-                                    <a href="https://play.google.com/store/apps/details?id=com.idee.southportmosque&hl=en_CA" target="_blank" class="inline-flex items-baseline font-medium leading-tight text-slate-800 hover:text-blue-800 focus-visible:text-blue-800">
-                                        Southport Masjid
-                                    </a>
-                                </h3>
-                                <p class="mt-2 text-sm leading-normal text-slate-600 text-justify">
-                                    A community app for the Southport Masjid, built with React Native and Node.js.
-                                    The app allows users to view prayer times, events, and announcements from the mosque, and make charitable donations.
-                                </p>
-                                <ul class="mt-2 flex flex-wrap text-sm leading-loose">
-                                    <li class="mr-4 text-slate-500">React-Native</li>
-                                    <li class="mr-4 text-slate-500">Node.js</li>
-                                    <li class="mr-4 text-slate-500">AWS Lambda</li>
-                                    <li class="mr-4 text-slate-500">DynamoDB</li>
-                                </ul>
+                        <!-- Project 3 - EZ Budget -->
+                        <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project3')">
+                                <div class="flex items-center gap-4 flex-1">
+                                    <img src="./public/EZ.png" alt="Project 3" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-slate-800">EZ Budget</h3>
+                                        <ul class="mt-1 flex flex-wrap text-sm leading-loose">
+                                            <li class="mr-4 text-slate-500">Expo</li>
+                                            <li class="mr-4 text-slate-500">SQLite</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <svg class="dropdown-icon w-6 h-6 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </div>
-                            <img src="./public/SouthportMasjid.png" alt="Project 1" class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
+                            <div id="project3" class="project-details px-4 pb-4">
+                                <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
+                                    <div class="sm:col-span-6">
+                                        <a href="https://github.com/Nafiur-Rhyme/EZBudget" target="_blank" class="inline-flex items-center gap-2 bg-transparent border-2 border-slate-400 text-slate-400 px-4 py-2 rounded-lg hover:bg-slate-400 hover:text-white transition font-medium text-sm mb-3">
+                                            View on GitHub
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            </svg>
+                                        </a>
+                                        <p class="mt-2 text-sm leading-normal text-slate-600">
+                                            A personal finance management app built with React Native and Expo.
+                                        </p>
+                                        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Track expenses with categorization and notes</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Set and monitor monthly budgets</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>View spending insights and analytics</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Local data storage with SQLite</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Project 4 -->
-                        <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 items-center justify-center cursor-pointer">
-                            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5"></div>
-                            <div class="z-10 sm:order-2 sm:col-span-6">
-                                <h3 class="text-lg font-semibold text-slate-800">
-                                    <a href="#" class="inline-flex items-baseline font-medium leading-tight text-slate-800 hover:text-blue-800 focus-visible:text-blue-800">
-                                        Personal Portfolio
-                                    </a>
-                                </h3>
-                                <p class="mt-2 text-sm leading-normal text-slate-600 text-justify">
-                                    This portfolio website was built with HTML, Tailwind CSS and vanilla JavaScript.
-                                    It showcases my projects, experiences, and skills in a clean and minimalistic design.
-                                </p>
-                                <ul class="mt-2 flex flex-wrap text-sm leading-loose">
-                                    <li class="mr-4 text-slate-500">HTML</li>
-                                    <li class="mr-4 text-slate-500">JavaScript</li>
-                                    <li class="mr-4 text-slate-500">Tailwindcss</li>
-                                </ul>
+
+                        <!-- Project 4 - Policy Document Chatbot -->
+                        <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project4')">
+                                <div class="flex items-center gap-4 flex-1">
+                                    <img src="./public/pdf_logo.png" alt="Project 4" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-slate-800">Policy Document - Q&A Chatbot</h3>
+                                        <ul class="mt-1 flex flex-wrap text-sm leading-loose">
+                                            <li class="mr-4 text-slate-500">Python</li>
+                                            <li class="mr-4 text-slate-500">Streamlit</li>
+                                            <li class="mr-4 text-slate-500">LangChain</li>
+                                            <li class="mr-4 text-slate-500">RAG</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <svg class="dropdown-icon w-6 h-6 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </div>
-                            <img src="./public/PortfolioProject.png" alt="Project 1" class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
+                            <div id="project4" class="project-details px-4 pb-4">
+                                <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
+                                    <div class="sm:col-span-6">
+                                        <p class="mt-2 text-sm leading-normal text-slate-600">
+                                            An AI-powered Q&A chatbot for querying policy documents using RAG (Retrieval-Augmented Generation).
+                                        </p>
+                                        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>PDF document processing and text extraction</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Semantic chunking and vector embeddings</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Context-aware responses using LangChain RAG pipeline</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Interactive Streamlit interface for natural language queries</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -347,6 +525,16 @@
     </div>
 
     <script>
+        // Toggle project dropdown
+        function toggleProject(projectId) {
+            const projectDetails = document.getElementById(projectId);
+            const projectHeader = projectDetails.previousElementSibling;
+            const icon = projectHeader.querySelector('.dropdown-icon');
+            
+            projectDetails.classList.toggle('expanded');
+            icon.classList.toggle('rotated');
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
