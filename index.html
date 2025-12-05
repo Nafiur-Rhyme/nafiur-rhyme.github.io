@@ -93,7 +93,12 @@
                             </li>
                             <li>
                                 <a href="#projects" class="group flex items-center py-3 text-slate-700 hover:text-slate-600 transition">
-                                    <span class="nav-text hover:tracking-[0.4em] delay-50 transition-all">Projects</span>
+                                    <span class="nav-text hover:tracking-[0.4em] delay-50 transition-all">Personal Projects</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#academic-projects" class="group flex items-center py-3 text-slate-700 hover:text-slate-600 transition">
+                                    <span class="nav-text hover:tracking-[0.4em] delay-50 transition-all">Academic Projects</span>
                                 </a>
                             </li>
                             <li>
@@ -259,13 +264,69 @@
                 </section>
 
                 <section id="projects" class="mb-16 scroll-mt-24">
-                    <h2 class="text-sm tracking-wider mb-8 text-center text-slate-800">PROJECTS<hr/></h2>
+                    <h2 class="text-sm tracking-wider mb-8 text-center text-slate-800">PERSONAL PROJECTS<hr/></h2>
                     <div class="space-y-4">
-                        <!-- Project 1 - Wishtrovert -->
+                        <!-- Project 1 - SureScan -->
                         <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
                             <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project1')">
                                 <div class="flex items-center gap-4 flex-1">
-                                    <img src="./public/WishtrovertLogo.png" alt="Project 1" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <img src="./public/surescan.jpeg" alt="SureScan" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-slate-800">SureScan</h3>
+                                        <ul class="mt-1 flex flex-wrap text-sm leading-loose">
+                                            <li class="mr-4 text-slate-500">FastAPI</li>
+                                            <li class="mr-4 text-slate-500">Next.js</li>
+                                            <li class="mr-4 text-slate-500">PostgreSQL</li>
+                                            <li class="mr-4 text-slate-500">Chart.js</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <svg class="dropdown-icon w-6 h-6 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div id="project1" class="project-details px-4 pb-4">
+                                <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
+                                    <div class="sm:col-span-8">
+                                        <p class="mt-2 text-sm leading-normal text-slate-600">
+                                            A SaaS platform for product authentication and business analytics using QR codes for importers and manufacturers.
+                                        </p>
+                                        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Architected end-to-end product authentication platform using FastAPI and Next.js</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Unique QR code generation for product verification and real-time inventory tracking</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Normalized PostgreSQL schema with 11 tables, foreign key relationships, and automated migrations</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Responsive corporate dashboard with Chart.js visualizations and real-time statistics</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Role-based access control with modular React components for multi-company management</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Consumer-facing QR scanning to verify product authenticity and manufacturer details</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 - Wishtrovert -->
+                        <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project2')">
+                                <div class="flex items-center gap-4 flex-1">
+                                    <img src="./public/WishtrovertLogo.png" alt="Project 2" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
                                     <div class="flex-1">
                                         <h3 class="text-lg font-semibold text-slate-800">Wishtrovert</h3>
                                         <ul class="mt-1 flex flex-wrap text-sm leading-loose">
@@ -280,7 +341,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </div>
-                            <div id="project1" class="project-details px-4 pb-4">
+                            <div id="project2" class="project-details px-4 pb-4">
                                 <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
                                     <div class="sm:col-span-8">
                                         <a href="https://wishtrovert.com" target="_blank" class="inline-flex items-center gap-2 bg-transparent border-2 border-slate-400 text-slate-400 px-4 py-2 rounded-lg hover:bg-slate-400 hover:text-white transition font-medium text-sm mb-3">
@@ -315,11 +376,11 @@
                             </div>
                         </div>
 
-                        <!-- Project 2 - Southport Masjid -->
+                        <!-- Project 3 - Southport Masjid -->
                         <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
-                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project2')">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project3')">
                                 <div class="flex items-center gap-4 flex-1">
-                                    <img src="./public/SouthportMasjid.png" alt="Project 2" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <img src="./public/SouthportMasjid.png" alt="Project 3" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
                                     <div class="flex-1">
                                         <h3 class="text-lg font-semibold text-slate-800">Southport Masjid</h3>
                                         <ul class="mt-1 flex flex-wrap text-sm leading-loose">
@@ -334,7 +395,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </div>
-                            <div id="project2" class="project-details px-4 pb-4">
+                            <div id="project3" class="project-details px-4 pb-4">
                                 <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
                                     <div class="sm:col-span-6">
                                         <a href="https://play.google.com/store/apps/details?id=com.idee.southportmosque&hl=en_CA" target="_blank" class="inline-flex items-center gap-2 bg-transparent border-2 border-slate-400 text-slate-400 px-4 py-2 rounded-lg hover:bg-slate-400 hover:text-white transition font-medium text-sm mb-3">
@@ -369,11 +430,11 @@
                             </div>
                         </div>
 
-                        <!-- Project 3 - EZ Budget -->
+                        <!-- Project 4 - EZ Budget -->
                         <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
-                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project3')">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project4')">
                                 <div class="flex items-center gap-4 flex-1">
-                                    <img src="./public/EZ.png" alt="Project 3" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <img src="./public/EZ.png" alt="Project 4" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
                                     <div class="flex-1">
                                         <h3 class="text-lg font-semibold text-slate-800">EZ Budget</h3>
                                         <ul class="mt-1 flex flex-wrap text-sm leading-loose">
@@ -386,7 +447,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </div>
-                            <div id="project3" class="project-details px-4 pb-4">
+                            <div id="project4" class="project-details px-4 pb-4">
                                 <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
                                     <div class="sm:col-span-6">
                                         <a href="https://github.com/Nafiur-Rhyme/EZBudget" target="_blank" class="inline-flex items-center gap-2 bg-transparent border-2 border-slate-400 text-slate-400 px-4 py-2 rounded-lg hover:bg-slate-400 hover:text-white transition font-medium text-sm mb-3">
@@ -420,19 +481,26 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        <!-- Project 4 - Policy Document Chatbot -->
+                <section id="academic-projects" class="mb-16 scroll-mt-24">
+                    <h2 class="text-sm tracking-wider mb-8 text-center text-slate-800">ACADEMIC PROJECTS<hr/></h2>
+                    <div class="space-y-4">
+                        <!-- Academic Project 1 - Student TradeHub -->
                         <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
-                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('project4')">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('academic1')">
                                 <div class="flex items-center gap-4 flex-1">
-                                    <img src="./public/pdf_logo.png" alt="Project 4" class="rounded w-12 h-12 object-cover border-2 border-slate-200/10">
+                                    <div class="rounded w-12 h-12 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-600 border-2 border-slate-200/10 text-white font-bold text-xl">
+                                        SE
+                                    </div>
                                     <div class="flex-1">
-                                        <h3 class="text-lg font-semibold text-slate-800">Policy Document - Q&A Chatbot</h3>
+                                        <h3 class="text-lg font-semibold text-slate-800">Student TradeHub</h3>
                                         <ul class="mt-1 flex flex-wrap text-sm leading-loose">
-                                            <li class="mr-4 text-slate-500">Python</li>
-                                            <li class="mr-4 text-slate-500">Streamlit</li>
-                                            <li class="mr-4 text-slate-500">LangChain</li>
-                                            <li class="mr-4 text-slate-500">RAG</li>
+                                            <li class="mr-4 text-slate-500">Next.js</li>
+                                            <li class="mr-4 text-slate-500">Express</li>
+                                            <li class="mr-4 text-slate-500">MongoDB</li>
+                                            <li class="mr-4 text-slate-500">GitHub Actions</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -440,28 +508,90 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </div>
-                            <div id="project4" class="project-details px-4 pb-4">
+                            <div id="academic1" class="project-details px-4 pb-4">
                                 <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
-                                    <div class="sm:col-span-6">
+                                    <div class="sm:col-span-8">
                                         <p class="mt-2 text-sm leading-normal text-slate-600">
-                                            An AI-powered Q&A chatbot for querying policy documents using RAG (Retrieval-Augmented Generation).
+                                            A marketplace platform exclusively for Memorial University students with verified MUN email authentication.
                                         </p>
                                         <ul class="mt-3 space-y-2 text-sm text-slate-600">
                                             <li class="flex items-start">
                                                 <span class="mr-2">•</span>
-                                                <span>PDF document processing and text extraction</span>
+                                                <span>Developed following Agile process for M.Sc Software Engineering course</span>
                                             </li>
                                             <li class="flex items-start">
                                                 <span class="mr-2">•</span>
-                                                <span>Semantic chunking and vector embeddings</span>
+                                                <span>Full-stack development with Next.js frontend and Express backend</span>
                                             </li>
                                             <li class="flex items-start">
                                                 <span class="mr-2">•</span>
-                                                <span>Context-aware responses using LangChain RAG pipeline</span>
+                                                <span>Implemented CI/CD pipeline using GitHub Actions</span>
                                             </li>
                                             <li class="flex items-start">
                                                 <span class="mr-2">•</span>
-                                                <span>Interactive Streamlit interface for natural language queries</span>
+                                                <span>Built comprehensive test suite for quality assurance</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Secure email verification system restricted to MUN students</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Academic Project 2 - Mood Controlled Ambient Lights -->
+                        <div class="project-item border-2 border-slate-200 rounded-lg overflow-hidden">
+                            <div class="project-header p-4 flex justify-between items-center" onclick="toggleProject('academic2')">
+                                <div class="flex items-center gap-4 flex-1">
+                                    <div class="rounded w-12 h-12 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-600 border-2 border-slate-200/10 text-white font-bold text-xl">
+                                        AIT
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-slate-800">Mood Controlled Ambient Lights</h3>
+                                        <ul class="mt-1 flex flex-wrap text-sm leading-loose">
+                                            <li class="mr-4 text-slate-500">Python</li>
+                                            <li class="mr-4 text-slate-500">DeepFace</li>
+                                            <li class="mr-4 text-slate-500">OpenCV</li>
+                                            <li class="mr-4 text-slate-500">React.js</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <svg class="dropdown-icon w-6 h-6 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div id="academic2" class="project-details px-4 pb-4">
+                                <div class="grid sm:grid-cols-8 sm:gap-8 md:gap-4 items-start">
+                                    <div class="sm:col-span-8">
+                                        <p class="mt-2 text-sm leading-normal text-slate-600">
+                                            A project for Advanced Interaction Techniques course. An AI-powered ambient lighting system that adapts in real-time based on detected facial expressions from webcam feed.
+                                        </p>
+                                        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Real-time facial expression recognition using DeepFace</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Classifies emotions into Happpy, sad, anger, fear, surprises and neutral</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Python backend with OpenCV and DeepFace for video processing</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>React.js web interface for customizing colors, brightness, and transitions per emotion</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>On-screen lighting simulation with pathway for Philips Hue API integration</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="mr-2">•</span>
+                                                <span>Local JSON storage for user preferences ensuring privacy and portability</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -470,6 +600,7 @@
                         </div>
                     </div>
                 </section>
+
                 <section id="education" class="my-24 scroll-mt-24">
                     <h2 class="text-sm tracking-wider mb-8 text-center text-slate-800">EDUCATION<hr/></h2>
                     <div class="space-y-8">
@@ -477,7 +608,7 @@
                             <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5"></div>
                             <div class="z-10 sm:order-2 sm:col-span-6">
                                 <h3 class="text-md font-semibold text-slate-800">
-                                    <a href="https://www.aiub.edu/" target="_blank" class="inline-flex items-baseline font-medium leading-tight text-slate-800 hover:text-blue-800 focus-visible:text-blue-800">
+                                    <a href="https://www.mun.ca/" target="_blank" class="inline-flex items-baseline font-medium leading-tight text-slate-800 hover:text-blue-800 focus-visible:text-blue-800">
                                         Memorial University of Newfoundland
                                     </a>
                                 </h3>
