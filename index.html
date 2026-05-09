@@ -88,22 +88,12 @@
                             </li>
                             <li>
                                 <a href="#experiences" class="group flex items-center py-3 text-slate-700 hover:text-slate-600 transition">
-                                    <span class="nav-text hover:tracking-[0.2em] delay-50 transition-all">Tech Experiences</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#other-experiences" class="group flex items-center py-3 text-slate-700 hover:text-slate-600 transition">
-                                    <span class="nav-text hover:tracking-[0.2em] delay-50 transition-all">Other Experiences</span>
+                                    <span class="nav-text hover:tracking-[0.2em] delay-50 transition-all">Experiences</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#projects" class="group flex items-center py-3 text-slate-700 hover:text-slate-600 transition">
-                                    <span class="nav-text hover:tracking-[0.2em] delay-50 transition-all">Personal Projects</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#academic-projects" class="group flex items-center py-3 text-slate-700 hover:text-slate-600 transition">
-                                    <span class="nav-text hover:tracking-[0.2em] delay-50 transition-all">Academic Projects</span>
+                                    <span class="nav-text hover:tracking-[0.2em] delay-50 transition-all">Projects</span>
                                 </a>
                             </li>
                             <li>
@@ -330,7 +320,7 @@
                 <section id="other-experiences" class="mb-16 scroll-mt-24">
                     <h2 class="text-sm tracking-wider mb-8 text-center text-slate-800">OTHER EXPERIENCES<hr/></h2>
                     <div class="space-y-14">
-                        <!-- Exp 1 - Teleperformance Canada -->
+                        <!-- Exp 4 - Teleperformance Canada -->
                         <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 items-center justify-center cursor-pointer">
                             <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5"></div>
                             <div class="z-10 sm:order-2 sm:col-span-6">
@@ -837,24 +827,51 @@
             const navLinks = document.querySelectorAll("#main-nav a");
             const sections = document.querySelectorAll("section");
         
-            // Create an intersection observer to detect when sections are in view
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    const navLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+            // Map section IDs to nav hrefs (handle grouped sections)
+            const sectionToNavMap = {
+                'experiences': '#experiences',
+                'other-experiences': '#experiences',
+                'projects': '#projects',
+                'academic-projects': '#projects',
+                'about': '#about',
+                'education': '#education'
+            };
         
-                    // If section is in view, add active class to nav item
-                    if (entry.isIntersecting) {
-                        navLink.querySelector(".nav-text").classList.add("active");
-                    } else {
-                        navLink.querySelector(".nav-text").classList.remove("active");
+            // Function to update active nav based on scroll position
+            function updateActiveNav() {
+                let currentSection = null;
+                let minDistance = Infinity;
+        
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const distance = Math.abs(rect.top - 300); // 300px threshold from top
+        
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        currentSection = section.id;
                     }
                 });
-            }, { threshold: .8 });
         
-            // Observe each section
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+                // Clear all active classes
+                document.querySelectorAll(".nav-text").forEach(text => {
+                    text.classList.remove("active");
+                });
+        
+                // Add active class to current section's nav item
+                if (currentSection) {
+                    const navHref = sectionToNavMap[currentSection];
+                    const navLink = document.querySelector(`a[href="${navHref}"] .nav-text`);
+                    if (navLink) {
+                        navLink.classList.add("active");
+                    }
+                }
+            }
+        
+            // Update on scroll
+            window.addEventListener("scroll", updateActiveNav);
+            
+            // Initial update
+            updateActiveNav();
         });
     </script>
 </body>
